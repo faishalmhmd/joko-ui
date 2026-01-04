@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <Logo className="mb-4" />
+            <Logo className="mb-4 grayscale" />
             <p className="text-muted-foreground text-sm max-w-md">
               Free, open-source Tailwind CSS components. Copy-paste ready components
               to build beautiful, responsive websites faster. No installation required.

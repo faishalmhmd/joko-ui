@@ -17,7 +17,8 @@ import {
   IconWand,
   IconDownload,
   IconSettings,
-  IconStar
+  IconStar,
+  IconFlower
 } from '@tabler/icons-react';
 
 export default function Home() {
@@ -46,12 +47,15 @@ export default function Home() {
             </div>
 
             {/* Heading */}
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-tight">
-              Joko
-              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                UI
-              </span>
-            </h1>
+            <div className="flex items-center gap-1 justify-center mb-6">
+              <IconFlower size={100} className='text-primary' />
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground  leading-tight">
+                Joko
+                <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                  UI
+                </span>
+              </h1>
+            </div>
 
             {/* Tagline */}
             <p className="text-lg sm:text-xl font-semibold text-foreground max-w-xl mx-auto mb-4 lg:mb-10">

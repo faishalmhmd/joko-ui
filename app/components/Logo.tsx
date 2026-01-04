@@ -1,14 +1,15 @@
 import Link from 'next/link';
-
+import { IconFlower } from '@tabler/icons-react';
 interface LogoProps {
   className?: string;
 }
 
 export default function Logo({ className = '' }: LogoProps) {
   return (
-    <Link href="/" className={`flex items-center group text-xl font-bold ${className}`}>
-      <span className='text-foreground font-medium'>Joko</span>
-      <span className="text-primary font-bold">UI</span>
+    <Link href="/" className={`flex items-center group text-2xl font-bold ${className}`}>
+      <IconFlower size={28} className='text-primary' />
+      <span className='text-foreground'>Joko</span>
+      <span className='text-primary'>UI</span>
     </Link>
   );
 }
