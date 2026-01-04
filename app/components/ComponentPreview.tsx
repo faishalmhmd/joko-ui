@@ -4,6 +4,16 @@ import { useState } from 'react';
 import { useTheme } from './ThemeProvider';
 import CodeBlock from './CodeBlock';
 
+import {
+  IconDeviceMobile,
+  IconDeviceTablet,
+  IconDeviceLaptop,
+  IconDeviceDesktop,
+  IconMaximize,
+  IconEye,
+  IconCode
+} from '@tabler/icons-react';
+
 interface ComponentPreviewProps {
   children: React.ReactNode;
   title?: string;
@@ -13,12 +23,12 @@ interface ComponentPreviewProps {
 type PreviewSize = 'mobile' | 'sm' | 'md' | 'lg' | 'full';
 type Tab = 'preview' | 'code';
 
-const sizeConfig: Record<PreviewSize, { width: string; label: string; icon: string }> = {
-  mobile: { width: '320px', label: 'Mobile', icon: '📱' },
-  sm: { width: '640px', label: 'Small', icon: '📲' },
-  md: { width: '768px', label: 'Medium', icon: '💻' },
-  lg: { width: '1024px', label: 'Large', icon: '🖥️' },
-  full: { width: '100%', label: 'Full', icon: '🖼️' },
+const sizeConfig: Record<PreviewSize, { width: string; label: string; icon: React.ReactNode }> = {
+  mobile: { width: '320px', label: 'Mobile', icon: <IconDeviceMobile size={16} stroke={1.5} /> },
+  sm: { width: '640px', label: 'Small', icon: <IconDeviceTablet size={16} stroke={1.5} /> },
+  md: { width: '768px', label: 'Medium', icon: <IconDeviceLaptop size={16} stroke={1.5} /> },
+  lg: { width: '1024px', label: 'Large', icon: <IconDeviceDesktop size={16} stroke={1.5} /> },
+  full: { width: '100%', label: 'Full', icon: <IconMaximize size={16} stroke={1.5} /> },
 };
 
 export default function ComponentPreview({ children, title, code }: ComponentPreviewProps) {
@@ -46,23 +56,27 @@ export default function ComponentPreview({ children, title, code }: ComponentPre
           {/* Tabs */}
           <button
             onClick={() => setActiveTab('preview')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all
+            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-2
               ${activeTab === 'preview'
                 ? 'dark:bg-gray-700 bg-gray-200 dark:text-white'
                 : 'hover:bg-secondary text-muted-foreground hover:text-foreground'
               }`}
+            title="Preview"
           >
-            Preview
+            <IconEye size={16} stroke={1.5} className="sm:hidden" />
+            <span className="hidden sm:inline">Preview</span>
           </button>
           <button
             onClick={() => setActiveTab('code')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all
+            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-2
               ${activeTab === 'code'
                 ? 'dark:bg-gray-700 bg-gray-200 dark:text-white'
                 : 'hover:bg-secondary text-muted-foreground hover:text-foreground'
               }`}
+            title="Code"
           >
-            Code
+            <IconCode size={16} stroke={1.5} className="sm:hidden" />
+            <span className="hidden sm:inline">Code</span>
           </button>
         </div>
 
