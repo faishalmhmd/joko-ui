@@ -14,24 +14,32 @@ const poppins = Poppins({
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: "Joko UI - Free Tailwind CSS Components",
   description:
     "Free, open-source Tailwind CSS components. Copy-paste ready components to build beautiful, responsive websites faster. No installation required.",
   keywords: ["tailwind css", "components", "ui library", "free", "open source"],
   openGraph: {
-    title: "Joko UI",
-    description: "UI components for modern web apps",
+    title: "Joko UI - Free Tailwind CSS Components",
+    description: "Free, open-source Tailwind CSS components. Copy-paste ready components to build beautiful, responsive websites faster.",
     url: baseUrl,
     siteName: "Joko UI",
     images: [
       {
-        url: `${baseUrl}/joko-ui.webp`,
+        url: "/joko-ui.webp",
         width: 1200,
         height: 630,
-        alt: "Joko UI Open Graph Image",
+        alt: "Joko UI - Free Tailwind CSS Components",
       },
     ],
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Joko UI - Free Tailwind CSS Components",
+    description: "Free, open-source Tailwind CSS components. Copy-paste ready components to build beautiful, responsive websites faster.",
+    images: ["/joko-ui.webp"],
   },
 };
 
