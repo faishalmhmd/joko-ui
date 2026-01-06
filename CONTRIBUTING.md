@@ -1,0 +1,151 @@
+# Contributing Guide
+
+Thank you for your interest in contributing 🎉
+
+This project uses **`development` as the contribution target branch**. The `main` branch is **production-only** and protected by automation.
+
+Please follow the guidelines below to keep the review and deployment process safe and smooth.
+
+---
+
+## 📌 Branching Strategy
+
+- `main` → **Production (auto-deployed on Vercel)**
+- `development` → **Preview / Staging**
+
+👉 **All Pull Requests MUST target the `development` branch**.
+
+---
+
+## 🚀 How to Contribute
+
+### 1️⃣ Fork the Repository
+Click the **Fork** button on GitHub to create a copy of this repository under your account.
+
+---
+
+### 2️⃣ Create a Branch in Your Fork
+You may use any branch name, but the following conventions are **recommended**:
+
+```bash
+feature/short-description
+fix/short-description
+docs/short-description
+```
+
+Example:
+```bash
+git checkout -b feature/improve-button-style
+```
+
+---
+
+### 3️⃣ Make Your Changes
+- Follow the existing code style and conventions
+- Run the project locally
+- Make sure the build passes without errors
+
+---
+
+### 4️⃣ Commit Message Convention (REQUIRED)
+
+This project follows **Conventional Commits** to keep history clean and readable.
+
+**Format:**
+```txt
+type: short description
+```
+
+**Common types:**
+- `feat` – new feature
+- `fix` – bug fix
+- `docs` – documentation only changes
+- `style` – formatting, no logic change
+- `refactor` – code change that neither fixes a bug nor adds a feature
+- `test` – adding or fixing tests
+- `chore` – tooling, config, maintenance
+
+**Examples:**
+```txt
+feat: add new variant for button components
+fix: prevent redirect loop
+docs: update contributing guide
+```
+
+❗ Commits that do not follow this convention may be requested to be fixed before merge.
+
+---
+
+### 5️⃣ Push to Your Fork
+```bash
+git push origin feature/improve-button-style
+```
+
+---
+
+### 6️⃣ Open a Pull Request
+When creating a Pull Request:
+- **Base branch**: `development`
+- **Compare branch**: your fork branch
+- A template will be provided automatically.
+Please make sure all sections are filled out before requesting review.
+
+
+Pull Requests targeting `main` **will be rejected or asked to retarget**.
+
+---
+
+## 🔍 Review Process
+
+After opening a PR:
+- CI checks will run (lint / test / build)
+- Maintainers will:
+  - Review the code
+  - Check the **Vercel Preview Deployment**
+  - (Optional) Test the branch locally
+
+If changes are requested, please push updates to the same branch.
+
+---
+
+## 🧪 Vercel Preview Deployment
+
+Each Pull Request will have a **Preview URL** on Vercel.
+
+⚠️ For PRs from forks:
+- Preview deployments require **manual authorization by a maintainer** (security reason)
+- Once approved, the preview link will appear in the PR
+
+---
+
+## ✅ Before Submitting a PR
+
+Please make sure:
+- [ ] Code is tested locally
+- [ ] Lint and build pass
+- [ ] UI / styles are visually checked
+- [ ] Commit messages follow the convention
+- [ ] No unrelated changes are included
+
+---
+
+## 📦 Merge Flow (Maintainers Only)
+
+```txt
+PR → development (preview) → main (production)
+```
+
+Contributors **do not need to interact with the `main` branch**.
+
+---
+
+## 💬 Need Help?
+
+If you are unsure or need guidance:
+- Open an **Issue**, or
+- Ask directly in the Pull Request
+
+We truly appreciate your contribution 🙌
+
+Happy coding! 🚀
+
