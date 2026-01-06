@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { IconSearch, IconX, IconToggleRight, IconCards, IconBell } from '@tabler/icons-react';
+import { IconSearch, IconX} from '@tabler/icons-react';
 import { applicationComponents, marketingComponents } from '@/lib/components-data';
 import ComponentCard from './ComponentCard';
 
@@ -106,14 +106,15 @@ export default function ComponentDialog({ isOpen, onClose }: ComponentDialogProp
             {filteredComponents.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {filteredComponents.map((component) => (
-                  <ComponentCard
-                    key={`${component.category}-${component.slug}`}
-                    title={component.name}
-                    count={component.variants.length}
-                    icon={component.icon}
-                    href={`/components/${component.category}/${component.slug}`}
-                    description={component.description}
-                  />
+                  <div key={`${component.category}-${component.slug}`} onClick={onClose}>
+                    <ComponentCard
+                      title={component.name}
+                      count={component.variants.length}
+                      icon={component.icon}
+                      href={`/components/${component.category}/${component.slug}`}
+                      description={component.description}
+                    />
+                  </div>
                 ))}
               </div>
             ) : (
