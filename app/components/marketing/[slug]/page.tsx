@@ -40,13 +40,14 @@ export default async function ComponentDetailPage({ params }: PageProps) {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground transition-colors">
+        <Link href="/" className="hover:text-foreground transition-colors" prefetch={false}>
           Home
         </Link>
         <span>/</span>
         <Link
           href="/components/marketing"
           className="hover:text-foreground transition-colors"
+          prefetch={false}
         >
           Marketing
         </Link>
@@ -98,6 +99,7 @@ export default async function ComponentDetailPage({ params }: PageProps) {
         <Link
           href="/components/marketing"
           className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
+          prefetch={false}
         >
           <svg
             className="w-5 h-5"

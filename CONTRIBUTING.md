@@ -17,6 +17,18 @@ Please follow the guidelines below to keep the review and deployment process saf
 
 ---
 
+## 🧾 Pull Request Template
+
+When opening a Pull Request, GitHub will automatically provide a Pull Request template.
+
+Please make sure:
+- All sections in the template are filled out
+- The checklist is completed before requesting a review
+
+Pull Requests with incomplete templates may be asked to update before review.
+
+---
+
 ## 🚀 How to Contribute
 
 ### 1️⃣ Fork the Repository
@@ -87,8 +99,6 @@ git push origin feature/improve-button-style
 When creating a Pull Request:
 - **Base branch**: `development`
 - **Compare branch**: your fork branch
-- A template will be provided automatically.
-Please make sure all sections are filled out before requesting review.
 
 
 Pull Requests targeting `main` **will be rejected or asked to retarget**.
@@ -126,6 +136,28 @@ Please make sure:
 - [ ] UI / styles are visually checked
 - [ ] Commit messages follow the convention
 - [ ] No unrelated changes are included
+
+### Keeping Your Fork Up to Date
+
+If the main repository has new changes or refactors,
+please update your fork instead of re-forking.
+
+1. Add upstream remote
+```
+git remote add upstream https://github.com/rayasabari/joko-ui.git
+git fetch upstream
+```
+2. Rebase your branch onto the latest `development`
+```
+git checkout development
+git pull upstream development
+git checkout feature/add-button-variant
+git rebase development
+```
+3. Resolve conflicts if any
+4. Push updates to your fork
+
+Re-forking is only recommended as a last resort.
 
 ---
 
