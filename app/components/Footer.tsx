@@ -21,12 +21,12 @@ export default function Footer() {
             <h3 className="font-semibold text-foreground mb-4">Components</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/components/application" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/components/application" className="text-muted-foreground hover:text-foreground transition-colors" prefetch={false}>
                   Application
                 </Link>
               </li>
               <li>
-                <Link href="/components/marketing" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/components/marketing" className="text-muted-foreground hover:text-foreground transition-colors" prefetch={false}>
                   Marketing
                 </Link>
               </li>

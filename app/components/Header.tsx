@@ -4,11 +4,12 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useTheme } from './ThemeProvider';
 import Logo from './Logo';
+import SearchDialog from './SearchDialog';
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 glass border-b border-border backdrop-blur-md">
@@ -41,16 +42,11 @@ export default function Header() {
           {/* Search & Actions */}
           <div className="flex items-center gap-4">
             {/* Search */}
-            <div className="hidden sm:block relative">
-              <input
-                type="text"
-                placeholder="Search components..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-64 px-4 py-2 pl-10 rounded-xl glass-button text-sm 
-                         focus:outline-none focus:ring-2 focus:ring-primary/50
-                         placeholder:text-muted-foreground"
-              />
+            <button
+              onClick={() => setIsDialogOpen(true)}
+              className="hidden sm:block relative w-64 px-4 py-2 pl-10 rounded-xl glass-button text-sm hover:ring-primary/50 transition-all text-left text-muted-foreground"
+            >
+              Search components...
               <svg
                 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground"
                 fill="none"
@@ -64,7 +60,7 @@ export default function Header() {
                   d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                 />
               </svg>
-            </div>
+            </button>
 
             {/* Theme Toggle */}
             <button
@@ -137,6 +133,7 @@ export default function Header() {
                 href="/components/application"
                 className="px-4 py-2 rounded-xl hover:bg-secondary transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
+                prefetch={false}
               >
                 Application Components
               </Link>
@@ -144,25 +141,30 @@ export default function Header() {
                 href="/components/marketing"
                 className="px-4 py-2 rounded-xl hover:bg-secondary transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
+                prefetch={false}
               >
                 Marketing Components
               </Link>
             </nav>
             {/* Mobile Search */}
-            <div className="mt-4 px-4">
-              <input
-                type="text"
-                placeholder="Search components..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-2 rounded-xl glass-button text-sm 
-                         focus:outline-none focus:ring-2 focus:ring-primary/50
-                         placeholder:text-muted-foreground"
-              />
-            </div>
+            <button
+              onClick={() => {
+                setIsDialogOpen(true);
+                setIsMenuOpen(false);
+              }}
+              className="mt-4 mx-4 w-[calc(100%-2rem)] px-4 py-2 rounded-xl glass-button text-sm hover:ring-2 hover:ring-primary/50 transition-all text-left text-muted-foreground"
+            >
+              Search components...
+            </button>
           </div>
         )}
       </div>
+
+      {/* Component Search Dialog */}
+      <SearchDialog
+        isOpen={isDialogOpen}
+        onClose={() => setIsDialogOpen(false)}
+      />
     </header>
   );
 }

@@ -14,7 +14,7 @@ export default function MarketingPage() {
       {/* Header */}
       <div className="mb-12">
         <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-          <Link href="/" className="hover:text-foreground transition-colors">
+          <Link href="/" className="hover:text-foreground transition-colors" prefetch={false}>
             Home
           </Link>
           <span>/</span>

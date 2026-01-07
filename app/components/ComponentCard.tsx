@@ -12,8 +12,8 @@ export default function ComponentCard({ title, count, icon, href, description }:
   return (
     <Link
       href={href}
-      className="glass-card p-6 block group hover:border-primary/50 transition-all duration-300
-                 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1"
+      className="glass-card p-6 block group hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1"
+      prefetch={false}
     >
       <div className="flex items-start justify-between mb-4">
         <span className="text-3xl text-primary">{icon}</span>
