@@ -1,13 +1,11 @@
 import React from 'react';
 import {
-  IconLayoutGrid,
   IconToggleRight,
   IconCards,
   IconBell,
   IconForms,
   IconTag,
   IconUserCircle,
-  IconChartLine,
   IconMessageCircle2,
   IconDeviceDesktop,
   IconSpeakerphone,
