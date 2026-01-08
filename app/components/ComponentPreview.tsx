@@ -31,7 +31,7 @@ const sizeConfig: Record<PreviewSize, { width: string; label: string; icon: Reac
   full: { width: '100%', label: 'Full', icon: <IconMaximize size={16} stroke={1.5} /> },
 };
 
-export default function ComponentPreview({ children, title, code }: ComponentPreviewProps) {
+export default function ComponentPreview({ children, code }: ComponentPreviewProps) {
   const [size, setSize] = useState<PreviewSize>('full');
   const [activeTab, setActiveTab] = useState<Tab>('preview');
   const [copied, setCopied] = useState(false);

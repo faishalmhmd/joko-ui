@@ -18,6 +18,7 @@ import {
   IconDownload,
   IconSettings,
   IconStar,
+  IconMessageCircle2,
   IconFlower,
   IconLoader2,
   IconLoader3
@@ -224,6 +225,13 @@ export default function Home() {
                   icon={<IconPremiumRights stroke={1.5} />}
                   href="/components/marketing/pricing"
                   description="Pricing tables and cards"
+                />
+                <ComponentCard
+                  title="Testimonials"
+                  count={3}
+                  icon={<IconMessageCircle2 stroke={1.5} />}
+                  href="/components/marketing/testimonials"
+                  description="Customer feedback sections"
                 />
               </div>
             </div>
