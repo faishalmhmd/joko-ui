@@ -21,7 +21,8 @@ import {
   IconMessageCircle2,
   IconFlower,
   IconLoader2,
-  IconLoader3
+  IconLoader3,
+  IconLineHeight
 } from '@tabler/icons-react';
 
 export default function Home() {
@@ -232,6 +233,13 @@ export default function Home() {
                   icon={<IconMessageCircle2 stroke={1.5} />}
                   href="/components/marketing/testimonials"
                   description="Customer feedback sections"
+                />
+                <ComponentCard
+                  title="FAQ"
+                  count={2}
+                  icon={<IconLineHeight stroke={1.5} />}
+                  href="/components/marketing/faq"
+                  description="FAQs for showing additional information."
                 />
               </div>
             </div>
