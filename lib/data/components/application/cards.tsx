@@ -4,8 +4,8 @@ import { ComponentType } from '../types';
 export const cards: ComponentType = {
   slug: 'cards',
   name: 'Cards',
-  icon: <IconCards stroke={ 1.5} />,
-description: 'Versatile card components for displaying content',
+  icon: <IconCards stroke={1.5} />,
+  description: 'Versatile card components for displaying content',
   variants: [
     {
       id: 'card-simple',
@@ -14,6 +14,7 @@ description: 'Versatile card components for displaying content',
   <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Card Title</h3>
   <p class="text-gray-600 dark:text-gray-300">This is a simple card component with a clean design.</p>
 </div>`,
+      contributor: 'rayasabari',
     },
     {
       id: 'card-image',
@@ -25,6 +26,7 @@ description: 'Versatile card components for displaying content',
     <p class="text-gray-600 dark:text-gray-300">A card with an image header section.</p>
   </div>
 </div>`,
+      contributor: 'rayasabari',
     },
     {
       id: 'card-glass',
@@ -33,6 +35,7 @@ description: 'Versatile card components for displaying content',
   <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Glass Card</h3>
   <p class="text-gray-700 dark:text-gray-200">A beautiful glassmorphism card design.</p>
 </div>`,
+      contributor: 'rayasabari',
     },
     {
       id: 'card-hover',
@@ -41,6 +44,7 @@ description: 'Versatile card components for displaying content',
   <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-lime-600 dark:group-hover:text-lime-400 transition-colors">Hover Card</h3>
   <p class="text-gray-600 dark:text-gray-300">Hover me for a nice effect!</p>
 </div>`,
+      contributor: 'rayasabari',
     },
   ],
 };

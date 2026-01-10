@@ -4,8 +4,8 @@ import { ComponentType } from '../types';
 export const testimonials: ComponentType = {
   slug: 'testimonials',
   name: 'Testimonials',
-  icon: <IconMessageCircle2 stroke={ 1.5} />,
-description: 'Customer testimonial sections to build trust',
+  icon: <IconMessageCircle2 stroke={1.5} />,
+  description: 'Customer testimonial sections to build trust',
   variants: [
     {
       id: 'testimonial-simple',
@@ -25,6 +25,7 @@ description: 'Customer testimonial sections to build trust',
     </div>
   </div>
 </section>`,
+      contributor: 'zoelabbb',
     },
     {
       id: 'testimonial-carousel',
@@ -61,6 +62,7 @@ description: 'Customer testimonial sections to build trust',
     </div>
   </div>
 </section>`,
+      contributor: 'zoelabbb',
     },
     {
       id: 'testimonial-grid',
@@ -142,6 +144,7 @@ description: 'Customer testimonial sections to build trust',
     </div>
   </div>
 </section>`,
+      contributor: 'zoelabbb',
     },
     {
       id: 'testimonial-with-header',
@@ -229,6 +232,7 @@ description: 'Customer testimonial sections to build trust',
     </div>
   </div>
 </section>`,
+      contributor: 'zoelabbb',
     },
     {
       id: 'testimonial-minimal',
@@ -268,6 +272,7 @@ description: 'Customer testimonial sections to build trust',
     </div>
   </div>
 </section>`,
+      contributor: 'zoelabbb',
     },
   ],
 };

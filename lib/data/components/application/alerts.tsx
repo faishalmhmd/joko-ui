@@ -4,8 +4,8 @@ import { ComponentType } from '../types';
 export const alerts: ComponentType = {
   slug: 'alerts',
   name: 'Alerts',
-  icon: <IconBell stroke={ 1.5} />,
-description: 'Alert and notification components for user feedback',
+  icon: <IconBell stroke={1.5} />,
+  description: 'Alert and notification components for user feedback',
   variants: [
     {
       id: 'alert-info',
@@ -18,6 +18,7 @@ description: 'Alert and notification components for user feedback',
     <p class="text-blue-800 dark:text-blue-200 font-medium">This is an informational alert message.</p>
   </div>
 </div>`,
+      contributor: 'rayasabari',
     },
     {
       id: 'alert-success',
@@ -30,6 +31,7 @@ description: 'Alert and notification components for user feedback',
     <p class="text-green-800 dark:text-green-200 font-medium">Success! Your changes have been saved.</p>
   </div>
 </div>`,
+      contributor: 'rayasabari',
     },
     {
       id: 'alert-warning',
@@ -42,6 +44,7 @@ description: 'Alert and notification components for user feedback',
     <p class="text-yellow-800 dark:text-yellow-200 font-medium">Warning! Please review before proceeding.</p>
   </div>
 </div>`,
+      contributor: 'rayasabari',
     },
     {
       id: 'alert-error',
@@ -54,6 +57,7 @@ description: 'Alert and notification components for user feedback',
     <p class="text-red-800 dark:text-red-200 font-medium">Error! Something went wrong.</p>
   </div>
 </div>`,
+      contributor: 'rayasabari',
     },
     {
       id: `alert-success-with-description`,
@@ -74,6 +78,7 @@ description: 'Alert and notification components for user feedback',
     </div>
   </div>
 </div>`,
+      contributor: 'zoelabbb',
     },
     {
       id: `alert-info-with-action-description`,
@@ -103,7 +108,8 @@ description: 'Alert and notification components for user feedback',
       </button>
     </div>
   </div>
-</div>`
+</div>`,
+      contributor: 'zoelabbb',
     },
     {
       id: `error-alert-with-description`,
@@ -127,6 +133,7 @@ description: 'Alert and notification components for user feedback',
     </div>
   </div>
 </div>`,
+      contributor: 'zoelabbb',
     },
     {
       id: `banner-alert-ads`,
@@ -151,6 +158,7 @@ description: 'Alert and notification components for user feedback',
     </div>
   </div>
 </div>`,
+      contributor: 'zoelabbb',
     }
   ],
 };

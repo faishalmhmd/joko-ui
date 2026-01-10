@@ -4,8 +4,8 @@ import { ComponentType } from '../types';
 export const skeleton: ComponentType = {
   slug: 'skeleton',
   name: 'Skeleton',
-  icon: <IconLoader3 stroke={ 1.5} />,
-description: 'Ghostly loading placeholders for content',
+  icon: <IconLoader3 stroke={1.5} />,
+  description: 'Ghostly loading placeholders for content',
   variants: [
     {
       id: 'skeleton-basic',
@@ -15,6 +15,7 @@ description: 'Ghostly loading placeholders for content',
   <div class="h-10 bg-gray-200 dark:bg-gray-700 rounded-lg w-full animate-pulse"></div>
   <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded-full w-full animate-pulse"></div>
 </div>`,
+      contributor: 'faishalmhmd',
     },
     {
       id: 'skeleton-avatar',
@@ -26,6 +27,7 @@ description: 'Ghostly loading placeholders for content',
     <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full w-1/2 animate-pulse"></div>
   </div>
 </div>`,
+      contributor: 'faishalmhmd',
     },
     {
       id: 'skeleton-card',
@@ -42,6 +44,7 @@ description: 'Ghostly loading placeholders for content',
     <div class="h-9 bg-gray-200 dark:bg-gray-700 rounded-lg w-24 animate-pulse"></div>
   </div>
 </div>`,
+      contributor: 'faishalmhmd',
     },
     {
       id: 'skeleton-list',
@@ -69,6 +72,7 @@ description: 'Ghostly loading placeholders for content',
     </div>
   </div>
 </div>`,
+      contributor: 'faishalmhmd',
     },
     {
       id: 'skeleton-profile',
@@ -122,6 +126,7 @@ description: 'Ghostly loading placeholders for content',
   <!-- Button skeleton -->
   <div class="h-10 bg-gray-300 dark:bg-gray-700 rounded"></div>
 </div>`,
+      contributor: 'zoelabbb',
     },
     {
       id: `skeleton-table`,
@@ -202,6 +207,7 @@ description: 'Ghostly loading placeholders for content',
     </div>
   </div>
 </div>`,
+      contributor: 'zoelabbb',
     },
     {
       id: `skeleton-form`,
@@ -268,6 +274,7 @@ description: 'Ghostly loading placeholders for content',
     <div class="h-10 bg-gray-300 dark:bg-gray-700 rounded w-32"></div>
   </div>
 </div>`,
+      contributor: 'zoelabbb',
     },
     {
       id: `skeleton-loading-screen`,
@@ -346,6 +353,7 @@ description: 'Ghostly loading placeholders for content',
     </div>
   </div>
 </div>`,
+      contributor: 'zoelabbb',
     }
   ],
 };

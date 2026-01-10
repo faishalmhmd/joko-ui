@@ -4,8 +4,8 @@ import { ComponentType } from '../types';
 export const forms: ComponentType = {
   slug: 'forms',
   name: 'Forms',
-  icon: <IconForms stroke={ 1.5} />,
-description: 'Form input components with modern styling',
+  icon: <IconForms stroke={1.5} />,
+  description: 'Form input components with modern styling',
   variants: [
     {
       id: 'input-basic',
@@ -14,6 +14,7 @@ description: 'Form input components with modern styling',
   <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
   <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-lime-500 focus:ring-2 focus:ring-lime-200 outline-none transition-all dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:focus:ring-lime-800 dark:placeholder-gray-400"/>
 </div>`,
+      contributor: 'rayasabari',
     },
     {
       id: 'input-icon',
@@ -27,6 +28,7 @@ description: 'Form input components with modern styling',
     <input type="text" placeholder="Search..." class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:border-lime-500 focus:ring-2 focus:ring-lime-200 outline-none transition-all dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-400"/>
   </div>
 </div>`,
+      contributor: 'rayasabari',
     },
     {
       id: 'input-floating',
@@ -35,6 +37,7 @@ description: 'Form input components with modern styling',
   <input type="text" id="floating" placeholder=" " class="peer w-full px-4 py-3 pt-6 rounded-lg border border-gray-300 focus:border-lime-500 focus:ring-2 focus:ring-lime-200 outline-none transition-all dark:bg-gray-800 dark:border-gray-600 dark:text-white"/>
   <label for="floating" class="absolute left-4 top-4 text-gray-500 dark:text-gray-400 transition-all peer-focus:top-1 peer-focus:text-xs peer-focus:text-lime-600 dark:peer-focus:text-lime-400 peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:text-xs">Username</label>
 </div>`,
+      contributor: 'rayasabari',
     },
     {
       id: 'select-basic',
@@ -48,6 +51,7 @@ description: 'Form input components with modern styling',
     <option>Singapore</option>
   </select>
 </div>`,
+      contributor: 'rayasabari',
     },
     {
       id: `login-form`,
@@ -165,6 +169,7 @@ description: 'Form input components with modern styling',
     </div>
   </div>
 </div>`,
+      contributor: 'zoelabbb',
     },
     {
       id: `contact-form`,
@@ -279,6 +284,7 @@ description: 'Form input components with modern styling',
     </div>
   </div>
 </div>`,
+      contributor: 'zoelabbb',
     },
     {
       id: `settings-form`,
@@ -445,6 +451,7 @@ description: 'Form input components with modern styling',
     </div>
   </div>
 </div>`,
+      contributor: 'zoelabbb',
     }
   ],
 };

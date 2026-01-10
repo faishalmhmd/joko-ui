@@ -29,6 +29,7 @@ export const heroes: ComponentType = {
     </div>
   </div>
 </section>`,
+      contributor: 'rayasabari',
     },
     {
       id: 'hero-gradient',
@@ -53,6 +54,7 @@ export const heroes: ComponentType = {
     </a>
   </div>
 </section>`,
+      contributor: 'rayasabari',
     },
     {
       id: 'hero-glass',
@@ -81,6 +83,7 @@ export const heroes: ComponentType = {
     </div>
   </div>
 </section>`,
+      contributor: 'rayasabari',
     },
     {
       id: `glassmorphism-hero`,
@@ -193,6 +196,7 @@ export const heroes: ComponentType = {
     }
   </style>
 </section>`,
+      contributor: 'zoelabbb',
     },
     {
       id: 'hero-minimal-professional',
@@ -279,6 +283,7 @@ export const heroes: ComponentType = {
     </div>
   </div>
 </section>`,
+      contributor: 'zoelabbb',
     }
   ],
 };

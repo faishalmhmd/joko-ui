@@ -4,8 +4,8 @@ import { ComponentType } from '../types';
 export const badges: ComponentType = {
   slug: 'badges',
   name: 'Badges',
-  icon: <IconTag stroke={ 1.5} />,
-description: 'Badge and tag components for labels and status',
+  icon: <IconTag stroke={1.5} />,
+  description: 'Badge and tag components for labels and status',
   variants: [
     {
       id: 'badge-solid',
@@ -16,6 +16,7 @@ description: 'Badge and tag components for labels and status',
   <span class="px-3 py-1 text-sm font-medium rounded-full bg-yellow-500 text-white">Warning</span>
   <span class="px-3 py-1 text-sm font-medium rounded-full bg-red-600 text-white">Error</span>
 </div>`,
+      contributor: 'rayasabari',
     },
     {
       id: 'badge-outline',
@@ -26,6 +27,7 @@ description: 'Badge and tag components for labels and status',
   <span class="px-3 py-1 text-sm font-medium rounded-full border-2 border-yellow-500 text-yellow-600 dark:border-yellow-400 dark:text-yellow-400">Warning</span>
   <span class="px-3 py-1 text-sm font-medium rounded-full border-2 border-red-600 text-red-600 dark:border-red-400 dark:text-red-400">Error</span>
 </div>`,
+      contributor: 'rayasabari',
     },
     {
       id: 'badge-soft',
@@ -36,6 +38,7 @@ description: 'Badge and tag components for labels and status',
   <span class="px-3 py-1 text-sm font-medium rounded-full bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300">Warning</span>
   <span class="px-3 py-1 text-sm font-medium rounded-full bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300">Error</span>
 </div>`,
+      contributor: 'rayasabari',
     },
     {
       id: 'badge-dot',
@@ -54,6 +57,7 @@ description: 'Badge and tag components for labels and status',
     Offline
   </span>
 </div>`,
+      contributor: 'rayasabari',
     },
   ],
 };

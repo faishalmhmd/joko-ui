@@ -4,8 +4,8 @@ import { ComponentType } from '../types';
 export const pricing: ComponentType = {
   slug: 'pricing',
   name: 'Pricing',
-  icon: <IconPremiumRights stroke={ 1.5} />,
-description: 'Pricing tables and cards for SaaS products',
+  icon: <IconPremiumRights stroke={1.5} />,
+  description: 'Pricing tables and cards for SaaS products',
   variants: [
     {
       id: 'pricing-simple',
@@ -41,6 +41,7 @@ description: 'Pricing tables and cards for SaaS products',
     Get Started
   </button>
 </div>`,
+      contributor: 'rayasabari',
     },
     {
       id: 'pricing-featured',
@@ -81,6 +82,7 @@ description: 'Pricing tables and cards for SaaS products',
     </button>
   </div>
 </div>`,
+      contributor: 'rayasabari',
     },
   ],
 };

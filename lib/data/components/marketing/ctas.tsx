@@ -4,8 +4,8 @@ import { ComponentType } from '../types';
 export const ctas: ComponentType = {
   slug: 'ctas',
   name: 'CTAs',
-  icon: <IconSpeakerphone stroke={ 1.5} />,
-description: 'Call-to-action sections to drive conversions',
+  icon: <IconSpeakerphone stroke={1.5} />,
+  description: 'Call-to-action sections to drive conversions',
   variants: [
     {
       id: 'cta-simple',
@@ -19,6 +19,7 @@ description: 'Call-to-action sections to drive conversions',
     </a>
   </div>
 </section>`,
+      contributor: 'rayasabari',
     },
     {
       id: 'cta-split',
@@ -39,6 +40,7 @@ description: 'Call-to-action sections to drive conversions',
     </div>
   </div>
 </section>`,
+      contributor: 'rayasabari',
     },
     {
       id: 'cta-newsletter',
@@ -55,6 +57,7 @@ description: 'Call-to-action sections to drive conversions',
     </form>
   </div>
 </section>`,
+      contributor: 'rayasabari',
     },
   ],
 };

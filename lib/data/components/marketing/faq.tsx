@@ -4,8 +4,8 @@ import { ComponentType } from '../types';
 export const faq: ComponentType = {
   slug: 'faq',
   name: 'FAQ',
-  icon: <IconLineHeight stroke={ 1.5} />,
-description: 'FAQs for showing additional information.',
+  icon: <IconLineHeight stroke={1.5} />,
+  description: 'FAQs for showing additional information.',
   variants: [
     {
       id: 'faq-simple',
@@ -115,6 +115,7 @@ description: 'FAQs for showing additional information.',
     </div>
   </details>
 </div>`,
+      contributor: 'zoelabbb',
     },
     {
       id: 'faq-default-open',
@@ -199,6 +200,7 @@ description: 'FAQs for showing additional information.',
       </div>
     </details>
   </div>`,
+      contributor: 'zoelabbb',
     },
   ],
 };

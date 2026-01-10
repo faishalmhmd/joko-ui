@@ -1,40 +1,54 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getComponentBySlug, marketingComponents } from "@/lib/data/components";
+import { getComponentBySlug, getAllComponents } from "@/lib/data/components";
 import ComponentPreview from "@/app/components/ComponentPreview";
 
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ category: string; slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return marketingComponents.map((component) => ({
-    slug: component.slug,
-  }));
+  const categories = getAllComponents();
+  const params: { category: string; slug: string }[] = [];
+
+  categories.forEach((cat) => {
+    cat.components.forEach((comp) => {
+      params.push({
+        category: cat.slug,
+        slug: comp.slug,
+      });
+    });
+  });
+
+  return params;
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug } = await params;
-  const component = getComponentBySlug("marketing", slug);
+  const { category, slug } = await params;
+  const component = getComponentBySlug(category, slug);
 
   if (!component) {
     return { title: "Component Not Found - Joko UI" };
   }
 
+  const categoryName = category === "application" ? "Application Components" : "Marketing Components";
+
   return {
-    title: `${component.name} - Marketing Components - Joko UI`,
+    title: `${component.name} - ${categoryName} - Joko UI`,
     description: component.description,
   };
 }
 
 export default async function ComponentDetailPage({ params }: PageProps) {
-  const { slug } = await params;
-  const component = getComponentBySlug("marketing", slug);
+  const { category, slug } = await params;
+  const component = getComponentBySlug(category, slug);
 
   if (!component) {
     notFound();
   }
+
+  const categoryName = category === "application" ? "Application" : "Marketing";
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -45,11 +59,11 @@ export default async function ComponentDetailPage({ params }: PageProps) {
         </Link>
         <span>/</span>
         <Link
-          href="/components/marketing"
-          className="hover:text-foreground transition-colors"
+          href={`/components/${category}`}
+          className="hover:text-foreground transition-colors capitalize"
           prefetch={false}
         >
-          Marketing
+          {categoryName}
         </Link>
         <span>/</span>
         <span className="text-foreground">{component.name}</span>
@@ -90,6 +104,18 @@ export default async function ComponentDetailPage({ params }: PageProps) {
             <ComponentPreview title={variant.name} code={variant.code}>
               <div dangerouslySetInnerHTML={{ __html: variant.code }} />
             </ComponentPreview>
+
+            <div className="flex items-center -mt-2">
+              <p className="text-sm font-medium text-gray-400 dark:text-gray-500">contributed by&nbsp;
+                <a
+                  href={`https://github.com/${variant.contributor ?? ""}`}
+                  target="_blank"
+                  className="text-gray-500 dark:text-gray-400 hover:text-primary hover:underline font-semibold transition-colors"
+                >
+                  {variant.contributor ?? "unknown"}
+                </a>
+              </p>
+            </div>
           </div>
         ))}
       </div>
@@ -97,7 +123,7 @@ export default async function ComponentDetailPage({ params }: PageProps) {
       {/* Navigation */}
       <div className="mt-16 pt-8 border-t border-border">
         <Link
-          href="/components/marketing"
+          href={`/components/${category}`}
           className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
           prefetch={false}
         >
@@ -114,7 +140,7 @@ export default async function ComponentDetailPage({ params }: PageProps) {
               d="M10 19l-7-7m0 0l7-7m-7 7h18"
             />
           </svg>
-          Back to Marketing Components
+          Back to {categoryName} Components
         </Link>
       </div>
     </div>
