@@ -7,6 +7,7 @@ import { badges } from './badges';
 import { avatars } from './avatars';
 import { progress } from './progress';
 import { skeleton } from './skeleton';
+import { loaders } from './loaders';
 
 export const applicationComponents: ComponentType[] = [
   buttons,
@@ -17,4 +18,5 @@ export const applicationComponents: ComponentType[] = [
   avatars,
   progress,
   skeleton,
+  loaders,
 ];
