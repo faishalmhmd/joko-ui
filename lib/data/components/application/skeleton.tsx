@@ -5,7 +5,13 @@ export const skeleton: ComponentType = {
   slug: 'skeleton',
   name: 'Skeleton',
   icon: <IconLoader3 stroke={ 1.5} />,
-description: 'Ghostly loading placeholders for content',
+  description: 'Ghostly loading placeholders for content',
+  pagination: {
+    enabled: true,
+    itemsPerPage: 5,
+    showPageNumbers: true,
+    showInfo: true
+  },
   variants: [
     {
       id: 'skeleton-basic',

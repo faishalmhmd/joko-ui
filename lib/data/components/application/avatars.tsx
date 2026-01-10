@@ -5,7 +5,13 @@ export const avatars: ComponentType = {
   slug: 'avatars',
   name: 'Avatars',
   icon: <IconUserCircle stroke={ 1.5} />,
-description: 'Avatar components for user profiles',
+  description: 'Avatar components for user profiles',
+  pagination: {
+    enabled: true,
+    itemsPerPage: 5,
+    showPageNumbers: true,
+    showInfo: true
+  },
   variants: [
     {
       id: 'avatar-sizes',

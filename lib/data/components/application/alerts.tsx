@@ -5,7 +5,13 @@ export const alerts: ComponentType = {
   slug: 'alerts',
   name: 'Alerts',
   icon: <IconBell stroke={ 1.5} />,
-description: 'Alert and notification components for user feedback',
+  description: 'Alert and notification components for user feedback',
+  pagination: {
+    enabled: true,
+    itemsPerPage: 5,
+    showPageNumbers: true,
+    showInfo: true
+  },
   variants: [
     {
       id: 'alert-info',

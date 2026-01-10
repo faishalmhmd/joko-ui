@@ -13,6 +13,12 @@ export interface ComponentType {
   icon: React.ReactNode;
   description: string;
   variants: ComponentVariant[];
+  pagination?: {
+    enabled: boolean;
+    itemsPerPage: number;
+    showPageNumbers?: boolean;
+    showInfo?: boolean;
+  };
 }
 
 export interface ComponentCategory {

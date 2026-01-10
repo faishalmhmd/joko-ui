@@ -5,7 +5,13 @@ export const forms: ComponentType = {
   slug: 'forms',
   name: 'Forms',
   icon: <IconForms stroke={ 1.5} />,
-description: 'Form input components with modern styling',
+  description: 'Form input components with modern styling',
+  pagination: {
+    enabled: true,
+    itemsPerPage: 5,
+    showPageNumbers: true,
+    showInfo: true
+  },
   variants: [
     {
       id: 'input-basic',

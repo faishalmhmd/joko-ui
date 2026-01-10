@@ -5,7 +5,13 @@ export const badges: ComponentType = {
   slug: 'badges',
   name: 'Badges',
   icon: <IconTag stroke={ 1.5} />,
-description: 'Badge and tag components for labels and status',
+  description: 'Badge and tag components for labels and status',
+  pagination: {
+    enabled: true,
+    itemsPerPage: 5,
+    showPageNumbers: true,
+    showInfo: true
+  },
   variants: [
     {
       id: 'badge-solid',
