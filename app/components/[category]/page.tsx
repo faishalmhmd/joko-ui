@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ComponentCard from "@/app/components/ComponentCard";
 import { getComponentsByCategory } from "@/lib/data/components";
+import CategoryClient from "@/app/components/CategoryClient";
 import { IconLayoutGrid, IconChartLine } from "@tabler/icons-react";
 
 interface PageProps {
@@ -66,19 +66,12 @@ export default async function CategoryPage({ params }: PageProps) {
         </p>
       </div>
 
-      {/* Components Grid */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {components.map((component) => (
-          <ComponentCard
-            key={component.slug}
-            title={component.name}
-            count={component.variants.length}
-            icon={component.icon}
-            href={`/components/${category}/${component.slug}`}
-            description={component.description}
-          />
-        ))}
-      </div>
+      {/* Components with Pagination */}
+      <CategoryClient 
+        components={components} 
+        category={category}
+        itemsPerPage={9}
+      />
     </div>
   );
 }

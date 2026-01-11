@@ -13,16 +13,16 @@ export function getAllComponents(): ComponentCategory[] {
     {
       slug: 'application',
       name: 'Application',
-      icon: <IconLayoutGrid stroke={ 1.5} />,
-    description: 'UI components for building modern web applications',
-    components: applicationComponents,
+      icon: <IconLayoutGrid stroke={1.5} />,
+      description: 'UI components for building modern web applications',
+      components: applicationComponents,
     },
-{
-  slug: 'marketing',
-    name: 'Marketing',
-      icon: <IconChartLine stroke={ 1.5 } />,
-  description: 'Marketing and landing page components',
-    components: marketingComponents,
+    {
+      slug: 'marketing',
+      name: 'Marketing',
+      icon: <IconChartLine stroke={1.5} />,
+      description: 'Marketing and landing page components',
+      components: marketingComponents,
     },
   ];
 }

@@ -60,10 +60,9 @@ export const alerts: ComponentType = {
       contributor: 'rayasabari',
     },
     {
-      id: `alert-success-with-description`,
+      id: 'alert-success-with-description',
       name: 'Success Alert with Description',
-      code: `<!-- Basic Success Alert -->
-<div class="rounded-lg border border-lime-200 dark:border-lime-800 bg-lime-50 dark:bg-lime-900/30 p-4">
+      code: `<div class="rounded-lg border border-lime-200 dark:border-lime-800 bg-lime-50 dark:bg-lime-900/30 p-4">
   <div class="flex">
     <div class="flex-shrink-0">
       <svg class="h-5 w-5 text-lime-600 dark:text-lime-400" viewBox="0 0 20 20" fill="currentColor">
@@ -81,10 +80,9 @@ export const alerts: ComponentType = {
       contributor: 'zoelabbb',
     },
     {
-      id: `alert-info-with-action-description`,
+      id: 'alert-info-with-action-description',
       name: 'Info Alert with Actions and Description',
-      code: `<!-- Alert with Actions -->
-<div class="rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/30 p-4">
+      code: `<div class="rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/30 p-4">
   <div class="flex items-start justify-between">
     <div class="flex">
       <div class="flex-shrink-0">
@@ -112,10 +110,9 @@ export const alerts: ComponentType = {
       contributor: 'zoelabbb',
     },
     {
-      id: `error-alert-with-description`,
+      id: 'error-alert-with-description',
       name: 'Error Alert with Description',
-      code: `<!-- Error Alert -->
-<div class="rounded-lg border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/30 p-4">
+      code: `<div class="rounded-lg border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/30 p-4">
   <div class="flex">
     <div class="flex-shrink-0">
       <svg class="h-5 w-5 text-red-600 dark:text-red-400" viewBox="0 0 20 20" fill="currentColor">
@@ -136,10 +133,9 @@ export const alerts: ComponentType = {
       contributor: 'zoelabbb',
     },
     {
-      id: `banner-alert-ads`,
+      id: 'banner-alert-ads',
       name: 'Banner Alert with Call to Action',
-      code: `<!-- Banner Alert -->
-<div class="bg-gradient-to-r from-lime-500 to-lime-600 dark:from-lime-600 dark:to-lime-700">
+      code: `<div class="bg-gradient-to-r from-lime-500 to-lime-600 dark:from-lime-600 dark:to-lime-700">
   <div class="container mx-auto px-4 py-3">
     <div class="flex flex-col sm:flex-row items-center justify-between">
       <div class="flex items-center">

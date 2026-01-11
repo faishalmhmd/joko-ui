@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getComponentBySlug, getAllComponents } from "@/lib/data/components";
-import ComponentPreview from "@/app/components/ComponentPreview";
-
+import ComponentDetailClient from "@/app/components/ComponentDetailClient";
 
 interface PageProps {
   params: Promise<{ category: string; slug: string }>;
@@ -87,38 +86,11 @@ export default async function ComponentDetailPage({ params }: PageProps) {
         </div>
       </div>
 
-      {/* Component Variants */}
-      <div className="space-y-12">
-        {component.variants.map((variant, index) => (
-          <div key={variant.id} className="space-y-4">
-            <div className="flex items-center gap-3">
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-semibold text-sm">
-                {index + 1}
-              </span>
-              <h2 className="text-xl font-semibold text-foreground">
-                {variant.name}
-              </h2>
-            </div>
-
-            {/* Preview */}
-            <ComponentPreview title={variant.name} code={variant.code}>
-              <div dangerouslySetInnerHTML={{ __html: variant.code }} />
-            </ComponentPreview>
-
-            <div className="flex items-center -mt-2">
-              <p className="text-sm font-medium text-gray-400 dark:text-gray-500">contributed by&nbsp;
-                <a
-                  href={`https://github.com/${variant.contributor ?? ""}`}
-                  target="_blank"
-                  className="text-gray-500 dark:text-gray-400 hover:text-primary hover:underline font-semibold transition-colors"
-                >
-                  {variant.contributor ?? "unknown"}
-                </a>
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
+      {/* Component Variants with Pagination */}
+      <ComponentDetailClient 
+        variants={component.variants} 
+        itemsPerPage={6}
+      />
 
       {/* Navigation */}
       <div className="mt-16 pt-8 border-t border-border">
