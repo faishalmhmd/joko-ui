@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTheme } from './ThemeProvider';
 import CodeBlock from './CodeBlock';
 
@@ -36,6 +36,11 @@ export default function ComponentPreview({ children, code }: ComponentPreviewPro
   const [activeTab, setActiveTab] = useState<Tab>('preview');
   const [copied, setCopied] = useState(false);
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const copyToClipboard = async () => {
     if (!code) return;
@@ -166,7 +171,7 @@ export default function ComponentPreview({ children, code }: ComponentPreviewPro
       {/* Content Area */}
       <div className="relative">
         {activeTab === 'preview' ? (
-          <div className={`preview-frame overflow-x-auto min-h-[300px] flex items-center justify-center p-8 ${theme === 'dark' ? 'dark bg-[#1e293b]' : 'bg-[#f8fafc]'}`}>
+          <div className={`preview-frame overflow-x-auto min-h-[300px] flex items-center justify-center p-8 ${mounted && theme === 'dark' ? 'dark bg-[#1e293b]' : 'bg-[#f8fafc]'}`}>
             <div
               className="w-full transition-all duration-300 ease-in-out mx-auto"
               style={{ maxWidth: sizeConfig[size].width }}
