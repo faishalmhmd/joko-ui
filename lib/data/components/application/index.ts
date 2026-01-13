@@ -8,6 +8,7 @@ import { avatars } from './avatars';
 import { progress } from './progress';
 import { skeleton } from './skeleton';
 import { loaders } from './loaders';
+import { description_list } from './description-list';
 
 export const applicationComponents: ComponentType[] = [
   buttons,
@@ -19,4 +20,5 @@ export const applicationComponents: ComponentType[] = [
   progress,
   skeleton,
   loaders,
+  description_list,
 ];
