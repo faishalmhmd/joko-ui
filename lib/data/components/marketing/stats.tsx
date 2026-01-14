@@ -5,7 +5,7 @@ export const stats: ComponentType = {
   slug: 'stats',
   name: 'Stats',
   icon: <IconChartBar stroke={1.5} />,
-  description: 'Stat section examples to highlight interesting statistics and facts to build trust with your visitors.',
+  description: 'Stat section to highlight interesting statistics and facts to build trust',
   variants: [
     {
       id: 'stats-simple',
