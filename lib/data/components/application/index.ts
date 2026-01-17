@@ -9,6 +9,9 @@ import { progress } from './progress';
 import { skeleton } from './skeleton';
 import { loaders } from './loaders';
 import { description_list } from './description-list';
+import { modals } from './modals';
+import { accordions } from './accordions';
+import { tables } from './tables';
 
 export const applicationComponents: ComponentType[] = [
   buttons,
@@ -21,4 +24,7 @@ export const applicationComponents: ComponentType[] = [
   skeleton,
   loaders,
   description_list,
+  modals,
+  accordions,
+  tables,
 ];

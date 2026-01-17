@@ -5,7 +5,6 @@ export interface ComponentVariant {
   id: string;
   name: string;
   code: string;
-  contributor?: string;
 }
 
 export interface ComponentType {
