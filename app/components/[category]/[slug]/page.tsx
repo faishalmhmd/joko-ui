@@ -1,54 +1,68 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getComponentBySlug, applicationComponents } from "@/lib/components-data";
-import ComponentPreview from "@/app/components/ComponentPreview";
-
+import { getComponentBySlug, getAllComponents } from "@/lib/data/components";
+import ComponentDetailClient from "@/app/components/ComponentDetailClient";
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ category: string; slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return applicationComponents.map((component) => ({
-    slug: component.slug,
-  }));
+  const categories = getAllComponents();
+  const params: { category: string; slug: string }[] = [];
+
+  categories.forEach((cat) => {
+    cat.components.forEach((comp) => {
+      params.push({
+        category: cat.slug,
+        slug: comp.slug,
+      });
+    });
+  });
+
+  return params;
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug } = await params;
-  const component = getComponentBySlug("application", slug);
+  const { category, slug } = await params;
+  const component = getComponentBySlug(category, slug);
 
   if (!component) {
     return { title: "Component Not Found - Joko UI" };
   }
 
+  const categoryName = category === "application" ? "Application Components" : "Marketing Components";
+
   return {
-    title: `${component.name} - Application Components - Joko UI`,
+    title: `${component.name} - ${categoryName} - Joko UI`,
     description: component.description,
   };
 }
 
 export default async function ComponentDetailPage({ params }: PageProps) {
-  const { slug } = await params;
-  const component = getComponentBySlug("application", slug);
+  const { category, slug } = await params;
+  const component = getComponentBySlug(category, slug);
 
   if (!component) {
     notFound();
   }
 
+  const categoryName = category === "application" ? "Application" : "Marketing";
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground transition-colors">
+        <Link href="/" className="hover:text-foreground transition-colors" prefetch={false}>
           Home
         </Link>
         <span>/</span>
         <Link
-          href="/components/application"
-          className="hover:text-foreground transition-colors"
+          href={`/components/${category}`}
+          className="hover:text-foreground transition-colors capitalize"
+          prefetch={false}
         >
-          Application
+          {categoryName}
         </Link>
         <span>/</span>
         <span className="text-foreground">{component.name}</span>
@@ -72,32 +86,18 @@ export default async function ComponentDetailPage({ params }: PageProps) {
         </div>
       </div>
 
-      {/* Component Variants */}
-      <div className="space-y-12">
-        {component.variants.map((variant, index) => (
-          <div key={variant.id} className="space-y-4">
-            <div className="flex items-center gap-3">
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-semibold text-sm">
-                {index + 1}
-              </span>
-              <h2 className="text-xl font-semibold text-foreground">
-                {variant.name}
-              </h2>
-            </div>
-
-            {/* Preview */}
-            <ComponentPreview title={variant.name} code={variant.code}>
-              <div dangerouslySetInnerHTML={{ __html: variant.code }} />
-            </ComponentPreview>
-          </div>
-        ))}
-      </div>
+      {/* Component Variants with Pagination */}
+      <ComponentDetailClient 
+        variants={component.variants} 
+        itemsPerPage={6}
+      />
 
       {/* Navigation */}
       <div className="mt-16 pt-8 border-t border-border">
         <Link
-          href="/components/application"
+          href={`/components/${category}`}
           className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
+          prefetch={false}
         >
           <svg
             className="w-5 h-5"
@@ -112,7 +112,7 @@ export default async function ComponentDetailPage({ params }: PageProps) {
               d="M10 19l-7-7m0 0l7-7m-7 7h18"
             />
           </svg>
-          Back to Application Components
+          Back to {categoryName} Components
         </Link>
       </div>
     </div>

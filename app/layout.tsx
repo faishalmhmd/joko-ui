@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/ThemeProvider";
 import Header from "./components/Header";
@@ -12,6 +13,14 @@ const poppins = Poppins({
 });
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Joko UI',
+  url: baseUrl,
+  alternateName: ['JokoUI', 'Joko UI', 'Joko UI Components'],
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -26,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "Joko UI",
     images: [
       {
-        url: `${baseUrl}/joko-ui.webp`,
+        url: `${baseUrl}/og.webp`,
         width: 1200,
         height: 630,
         alt: "Joko UI - Free Tailwind CSS Components",
@@ -39,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Joko UI - Free Tailwind CSS Components",
     description: "Free, open-source Tailwind CSS components. Copy-paste ready components to build beautiful, responsive websites faster.",
-    images: [`${baseUrl}/joko-ui.webp`],
+    images: [`${baseUrl}/og.webp`],
   },
 };
 
@@ -51,6 +60,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.variable} font-sans antialiased`} suppressHydrationWarning>
+        {/* Inject JSON-LD Script */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ThemeProvider>
           <div className="min-h-screen flex flex-col bg-background">
             <Header />
@@ -59,6 +73,7 @@ export default function RootLayout({
           </div>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
     </html>
   );
 }

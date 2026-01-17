@@ -58,7 +58,8 @@ Components for building high-converting landing pages:
 
 ## Contributing
 
-You can contribute by adding new components, fixing bugs or improving the documentation. Please create an issue before starting any work. Once you get approval on your issue, you can create a new branch and submit your changes in a PR.
+You can contribute by adding new components, fixing bugs or improving the documentation. Please read **[CONTRIBUTING.md](./CONTRIBUTING.md)** before opening an issue or Pull Request.
+
 
 ## License
 
