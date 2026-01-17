@@ -20,7 +20,12 @@ import {
   IconStar,
   IconFlower,
   IconLoader2,
-  IconLoader3
+  IconLoader3,
+  IconBrowser,
+  IconTable,
+  IconList,
+  IconFolders,
+  IconSeparator
 } from '@tabler/icons-react';
 
 export default function Home() {
@@ -187,6 +192,41 @@ export default function Home() {
                   icon={<IconLoader3 stroke={1.5} />}
                   href="/components/application/skeleton"
                   description="Ghostly loading placeholders"
+                />
+                <ComponentCard
+                  title="Modals"
+                  count={2}
+                  icon={<IconBrowser stroke={1.5} />}
+                  href="/components/application/modals"
+                  description="Dialog windows for interactions"
+                />
+                <ComponentCard
+                  title="Tables"
+                  count={2}
+                  icon={<IconTable stroke={1.5} />}
+                  href="/components/application/tables"
+                  description="Responsive data tables"
+                />
+                <ComponentCard
+                  title="Accordion"
+                  count={1}
+                  icon={<IconList stroke={1.5} />}
+                  href="/components/application/accordion"
+                  description="Collapsible content sections"
+                />
+                <ComponentCard
+                  title="Tabs"
+                  count={2}
+                  icon={<IconFolders stroke={1.5} />}
+                  href="/components/application/tabs"
+                  description="Navigation tabs"
+                />
+                <ComponentCard
+                  title="Pagination"
+                  count={1}
+                  icon={<IconSeparator stroke={1.5} />}
+                  href="/components/application/pagination"
+                  description="Page navigation controls"
                 />
               </div>
             </div>

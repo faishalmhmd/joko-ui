@@ -13,7 +13,13 @@ import {
   IconLayoutBottombar,
   IconPremiumRights,
   IconLoader2,
-  IconLoader3
+  IconLoader3,
+  IconBrowser,
+  IconTable,
+  IconList,
+  IconFolders,
+  IconMenu,
+  IconSeparator
 } from '@tabler/icons-react';
 
 // Type definitions for components
@@ -472,6 +478,346 @@ export const applicationComponents: ComponentType[] = [
   </div>
 </div>`,
       }
+    ],
+  },
+  {
+    slug: 'modals',
+    name: 'Modals',
+    icon: <IconBrowser stroke={1.5} />,
+    description: 'Dialog windows for user interactions and confirmations',
+    variants: [
+      {
+        id: 'modal-basic',
+        name: 'Basic Modal',
+        code: `<div>
+  <label for="modal-basic-toggle" class="inline-block px-6 py-3 bg-lime-600 text-white font-semibold rounded-lg shadow-md hover:bg-lime-700 cursor-pointer transition-colors">
+    Open Modal
+  </label>
+  
+  <input type="checkbox" id="modal-basic-toggle" class="peer hidden" />
+  
+  <div class="fixed inset-0 z-50 hidden peer-checked:flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 opacity-0 peer-checked:opacity-100 transition-opacity duration-300">
+    <label for="modal-basic-toggle" class="absolute inset-0 cursor-default"></label>
+    <div class="relative w-full max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden transform scale-90 peer-checked:scale-100 transition-all duration-300">
+      <div class="p-6">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Modal Title</h3>
+        <p class="text-gray-600 dark:text-gray-300">This is a simple modal dialog. It sits on top of the page content and captures user focus.</p>
+      </div>
+      <div class="px-6 py-4 bg-gray-50 dark:bg-gray-900 flex justify-end gap-3">
+        <label for="modal-basic-toggle" class="px-4 py-2 text-gray-600 dark:text-gray-300 font-medium hover:text-gray-900 dark:hover:text-white transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer">Cancel</label>
+        <button class="px-4 py-2 bg-lime-600 text-white font-medium rounded-lg hover:bg-lime-700 transition-colors shadow-lg shadow-lime-600/20">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>`,
+      },
+      {
+        id: 'modal-danger',
+        name: 'Danger Modal',
+        code: `<div>
+  <label for="modal-danger-toggle" class="inline-block px-6 py-3 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 cursor-pointer transition-colors">
+    Delete Account
+  </label>
+  
+  <input type="checkbox" id="modal-danger-toggle" class="peer hidden" />
+  
+  <div class="fixed inset-0 z-50 hidden peer-checked:flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 opacity-0 peer-checked:opacity-100 transition-opacity duration-300">
+     <label for="modal-danger-toggle" class="absolute inset-0 cursor-default"></label>
+    <div class="relative w-full max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden border-t-4 border-red-500 transform scale-90 peer-checked:scale-100 transition-all duration-300">
+      <div class="p-6">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Delete Account</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Are you sure you want to delete your account?</p>
+          </div>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">This action cannot be undone. All your data will be permanently removed from our servers.</p>
+        <div class="flex justify-end gap-3">
+          <label for="modal-danger-toggle" class="px-4 py-2 text-gray-600 dark:text-gray-300 font-medium hover:text-gray-900 dark:hover:text-white transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer">Cancel</label>
+          <button class="px-4 py-2 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 transition-colors shadow-lg shadow-red-600/20">Delete Account</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`,
+      },
+    ],
+  },
+  {
+    slug: 'tables',
+    name: 'Tables',
+    icon: <IconTable stroke={1.5} />,
+    description: 'Responsive tables for displaying data sets',
+    variants: [
+      {
+        id: 'table-simple',
+        name: 'Simple Table',
+        code: `<div class="w-full overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-sm">
+      <thead class="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white font-semibold">
+        <tr>
+          <th class="px-6 py-4">Name</th>
+          <th class="px-6 py-4">Title</th>
+          <th class="px-6 py-4">Status</th>
+          <th class="px-6 py-4 text-right">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200 dark:divide-gray-700 bg-white dark:bg-gray-900">
+        <tr class="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Prabowo</td>
+          <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Software Engineer</td>
+          <td class="px-6 py-4">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Active</span>
+          </td>
+          <td class="px-6 py-4 text-right text-gray-500 hover:text-lime-600 cursor-pointer">Edit</td>
+        </tr>
+        <tr class="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Jokowi</td>
+          <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Product Manager</td>
+          <td class="px-6 py-4">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400">Away</span>
+          </td>
+          <td class="px-6 py-4 text-right text-gray-500 hover:text-lime-600 cursor-pointer">Edit</td>
+        </tr>
+        <tr class="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Gibran</td>
+          <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Designer</td>
+          <td class="px-6 py-4">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">Offline</span>
+          </td>
+          <td class="px-6 py-4 text-right text-gray-500 hover:text-lime-600 cursor-pointer">Edit</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>`,
+      },
+      {
+        id: 'table-striped',
+        name: 'Striped Table',
+        code: `<div class="w-full overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700">
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-sm">
+      <thead class="bg-lime-600 text-white font-semibold">
+        <tr>
+          <th class="px-6 py-4">Invoice</th>
+          <th class="px-6 py-4">Client</th>
+          <th class="px-6 py-4">Amount</th>
+          <th class="px-6 py-4 text-right">Status</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200 dark:divide-gray-700 bg-white dark:bg-gray-900">
+        <tr class="odd:bg-white dark:odd:bg-gray-900 even:bg-gray-50 dark:even:bg-gray-800/50">
+          <td class="px-6 py-4 font-mono text-gray-600 dark:text-gray-400">#INV-001</td>
+          <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Acme Corp</td>
+          <td class="px-6 py-4 text-gray-900 dark:text-white">$1,200.00</td>
+          <td class="px-6 py-4 text-right text-green-600 font-medium">Paid</td>
+        </tr>
+        <tr class="odd:bg-white dark:odd:bg-gray-900 even:bg-gray-50 dark:even:bg-gray-800/50">
+          <td class="px-6 py-4 font-mono text-gray-600 dark:text-gray-400">#INV-002</td>
+          <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Globex Inc</td>
+          <td class="px-6 py-4 text-gray-900 dark:text-white">$3,450.00</td>
+          <td class="px-6 py-4 text-right text-yellow-600 font-medium">Pending</td>
+        </tr>
+        <tr class="odd:bg-white dark:odd:bg-gray-900 even:bg-gray-50 dark:even:bg-gray-800/50">
+          <td class="px-6 py-4 font-mono text-gray-600 dark:text-gray-400">#INV-003</td>
+          <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Stark Ind</td>
+          <td class="px-6 py-4 text-gray-900 dark:text-white">$8,900.00</td>
+          <td class="px-6 py-4 text-right text-green-600 font-medium">Paid</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>`,
+      },
+    ],
+  },
+  {
+    slug: 'accordion',
+    name: 'Accordion',
+    icon: <IconList stroke={1.5} />,
+    description: 'Collapsible content sections for managing space',
+    variants: [
+      {
+        id: 'accordion-basic',
+        name: 'Basic Accordion',
+        code: `<div class="space-y-4 max-w-lg">
+  <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+    <input type="checkbox" id="acc-1" class="peer hidden" />
+    <label for="acc-1" class="w-full flex items-center justify-between p-4 bg-white dark:bg-gray-800 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors cursor-pointer">
+      <span class="font-medium text-gray-900 dark:text-white">Is this free to use?</span>
+      <svg class="w-5 h-5 text-gray-500 transition-transform peer-checked:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </label>
+    <div class="hidden peer-checked:block p-4 bg-gray-50 dark:bg-gray-900 text-sm text-gray-600 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700 transition-all">
+      Yes, this component library is completely free and open source. You can use it in personal and commercial projects.
+    </div>
+  </div>
+  
+  <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+    <input type="checkbox" id="acc-2" class="peer hidden" />
+    <label for="acc-2" class="w-full flex items-center justify-between p-4 bg-white dark:bg-gray-800 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors cursor-pointer">
+      <span class="font-medium text-gray-900 dark:text-white">How do I install it?</span>
+      <svg class="w-5 h-5 text-gray-500 transition-transform peer-checked:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </label>
+    <div class="hidden peer-checked:block p-4 bg-gray-50 dark:bg-gray-900 text-sm text-gray-600 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700 transition-all">
+      Installation is simple! Just copy the HTML and Tailwind classes into your project. No dependencies required.
+    </div>
+  </div>
+  
+  <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+    <input type="checkbox" id="acc-3" class="peer hidden" />
+    <label for="acc-3" class="w-full flex items-center justify-between p-4 bg-white dark:bg-gray-800 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors cursor-pointer">
+      <span class="font-medium text-gray-900 dark:text-white">Can I customize the colors?</span>
+      <svg class="w-5 h-5 text-gray-500 transition-transform peer-checked:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </label>
+    <div class="hidden peer-checked:block p-4 bg-gray-50 dark:bg-gray-900 text-sm text-gray-600 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700 transition-all">
+      Absolutely. All colors are based on standard Tailwind CSS color palette, so you can easily swap 'lime' for any other color name.
+    </div>
+  </div>
+</div>`,
+      },
+    ],
+  },
+  {
+    slug: 'tabs',
+    name: 'Tabs',
+    icon: <IconFolders stroke={1.5} />,
+    description: 'Navigation tabs for organizing content',
+    variants: [
+      {
+        id: 'tabs-underline',
+        name: 'Underline Tabs',
+        code: `<div class="w-full max-w-lg flex flex-wrap">
+  <input type="radio" name="tabs-u" id="tab-u-1" class="peer/tab1 hidden" checked />
+  <label for="tab-u-1" class="order-1 flex-1 py-4 text-sm font-medium text-center border-b-2 border-transparent text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 peer-checked/tab1:text-lime-600 peer-checked/tab1:border-lime-600 dark:peer-checked/tab1:text-lime-400 dark:peer-checked/tab1:border-lime-400 transition-all cursor-pointer">
+    Profile
+  </label>
+  
+  <input type="radio" name="tabs-u" id="tab-u-2" class="peer/tab2 hidden" />
+  <label for="tab-u-2" class="order-1 flex-1 py-4 text-sm font-medium text-center border-b-2 border-transparent text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 peer-checked/tab2:text-lime-600 peer-checked/tab2:border-lime-600 dark:peer-checked/tab2:text-lime-400 dark:peer-checked/tab2:border-lime-400 transition-all cursor-pointer">
+    Settings
+  </label>
+  
+  <input type="radio" name="tabs-u" id="tab-u-3" class="peer/tab3 hidden" />
+  <label for="tab-u-3" class="order-1 flex-1 py-4 text-sm font-medium text-center border-b-2 border-transparent text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 peer-checked/tab3:text-lime-600 peer-checked/tab3:border-lime-600 dark:peer-checked/tab3:text-lime-400 dark:peer-checked/tab3:border-lime-400 transition-all cursor-pointer">
+    Notifications
+  </label>
+
+  <div class="order-2 w-full border-b border-gray-200 dark:border-gray-700"></div>
+
+  <div class="order-3 w-full hidden peer-checked/tab1:block py-6 animate-fade-in">
+    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Profile Settings</h3>
+    <p class="text-gray-600 dark:text-gray-300">Manage your public profile and private information here.</p>
+  </div>
+  <div class="order-3 w-full hidden peer-checked/tab2:block py-6 animate-fade-in">
+    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Account Settings</h3>
+    <p class="text-gray-600 dark:text-gray-300">Update your password and security preferences.</p>
+  </div>
+  <div class="order-3 w-full hidden peer-checked/tab3:block py-6 animate-fade-in">
+    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Notifications</h3>
+    <p class="text-gray-600 dark:text-gray-300">Choose which emails and alerts you want to receive.</p>
+  </div>
+</div>`,
+      },
+      {
+        id: 'tabs-pills',
+        name: 'Pills Tabs',
+        code: `<div class="w-full max-w-lg flex flex-wrap bg-gray-100 dark:bg-gray-800 rounded-xl p-1">
+  <input type="radio" name="tabs-p" id="tab-p-1" class="peer/tab1 hidden" checked />
+  <label for="tab-p-1" class="order-1 flex-1 py-2 text-sm font-medium text-center rounded-lg transition-all text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-white/50 dark:hover:bg-gray-700/50 peer-checked/tab1:bg-white dark:peer-checked/tab1:bg-gray-700 peer-checked/tab1:text-gray-900 dark:peer-checked/tab1:text-white peer-checked/tab1:shadow-sm cursor-pointer">
+    Daily
+  </label>
+  
+  <input type="radio" name="tabs-p" id="tab-p-2" class="peer/tab2 hidden" />
+  <label for="tab-p-2" class="order-1 flex-1 py-2 text-sm font-medium text-center rounded-lg transition-all text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-white/50 dark:hover:bg-gray-700/50 peer-checked/tab2:bg-white dark:peer-checked/tab2:bg-gray-700 peer-checked/tab2:text-gray-900 dark:peer-checked/tab2:text-white peer-checked/tab2:shadow-sm cursor-pointer">
+    Weekly
+  </label>
+  
+  <input type="radio" name="tabs-p" id="tab-p-3" class="peer/tab3 hidden" />
+  <label for="tab-p-3" class="order-1 flex-1 py-2 text-sm font-medium text-center rounded-lg transition-all text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-white/50 dark:hover:bg-gray-700/50 peer-checked/tab3:bg-white dark:peer-checked/tab3:bg-gray-700 peer-checked/tab3:text-gray-900 dark:peer-checked/tab3:text-white peer-checked/tab3:shadow-sm cursor-pointer">
+    Monthly
+  </label>
+
+  <div class="order-2 w-full hidden peer-checked/tab1:block mt-4 text-center animate-fade-in">
+    <div class="inline-block p-4 rounded-full bg-lime-100 dark:bg-lime-900/30 text-lime-600 dark:text-lime-400 mb-2">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    </div>
+    <p class="text-gray-600 dark:text-gray-300">Viewing daily statistics</p>
+  </div>
+  <div class="order-2 w-full hidden peer-checked/tab2:block mt-4 text-center animate-fade-in">
+    <div class="inline-block p-4 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 mb-2">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+    </div>
+    <p class="text-gray-600 dark:text-gray-300">Viewing weekly statistics</p>
+  </div>
+  <div class="order-2 w-full hidden peer-checked/tab3:block mt-4 text-center animate-fade-in">
+    <div class="inline-block p-4 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 mb-2">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+    </div>
+    <p class="text-gray-600 dark:text-gray-300">Viewing monthly statistics</p>
+  </div>
+</div>`,
+      },
+    ],
+  },
+
+  {
+    slug: 'pagination',
+    name: 'Pagination',
+    icon: <IconSeparator stroke={1.5} />, // Using IconSeparator as a metaphor for dividing content/pages
+    description: 'Navigation for paged content',
+    variants: [
+      {
+        id: 'pagination-basic',
+        name: 'Basic Pagination',
+        code: `<nav aria-label="Page navigation" class="flex justify-center">
+  <ul class="inline-flex items-center -space-x-px text-sm shadow-sm rounded-lg">
+    <li>
+      <a href="#" class="flex items-center justify-center px-3 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white transition-colors">
+        <span class="sr-only">Previous</span>
+        <svg class="w-2.5 h-2.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="flex items-center justify-center px-3 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white transition-colors">1</a>
+    </li>
+    <li>
+      <a href="#" class="flex items-center justify-center px-3 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white transition-colors">2</a>
+    </li>
+    <li>
+      <a href="#" aria-current="page" class="z-10 flex items-center justify-center px-3 h-10 leading-tight text-lime-600 border border-lime-300 bg-lime-50 hover:bg-lime-100 hover:text-lime-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+    </li>
+    <li>
+      <a href="#" class="flex items-center justify-center px-3 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white transition-colors">4</a>
+    </li>
+    <li>
+      <a href="#" class="flex items-center justify-center px-3 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white transition-colors">5</a>
+    </li>
+    <li>
+      <a href="#" class="flex items-center justify-center px-3 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white transition-colors">
+        <span class="sr-only">Next</span>
+        <svg class="w-2.5 h-2.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</nav>`,
+      },
     ],
   },
 ];
