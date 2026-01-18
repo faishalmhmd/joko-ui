@@ -10,6 +10,7 @@ import { progress } from './progress';
 import { skeleton } from './skeleton';
 import { loaders } from './loaders';
 import { description_list } from './description-list';
+import { breadcrumbs } from './breadcrumbs';
 
 export const applicationComponents: ComponentType[] = [
   buttons,
@@ -23,4 +24,5 @@ export const applicationComponents: ComponentType[] = [
   loaders,
   description_list,
   navbars,
+  breadcrumbs,
 ];
