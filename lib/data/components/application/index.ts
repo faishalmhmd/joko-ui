@@ -11,6 +11,7 @@ import { skeleton } from './skeleton';
 import { loaders } from './loaders';
 import { description_list } from './description-list';
 import { breadcrumbs } from './breadcrumbs';
+import { sidebars } from './sidebars';
 
 export const applicationComponents: ComponentType[] = [
   buttons,
@@ -25,4 +26,5 @@ export const applicationComponents: ComponentType[] = [
   description_list,
   navbars,
   breadcrumbs,
+  sidebars,
 ];
