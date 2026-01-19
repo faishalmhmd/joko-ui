@@ -8,6 +8,9 @@ import { avatars } from './avatars';
 import { progress } from './progress';
 import { skeleton } from './skeleton';
 import { loaders } from './loaders';
+import { modals } from './modals';
+import { accordions } from './accordions';
+import { tables } from './tables';
 import { breadcrumbs } from './breadcrumbs';
 import { sidebars } from './sidebars';
 import { navbars } from './navbars';
@@ -25,4 +28,8 @@ export const applicationComponents: ComponentType[] = [
   alerts,
   progress,
   skeleton,
+  loaders,
+  modals,
+  accordions,
+  tables,
 ];
