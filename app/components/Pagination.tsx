@@ -23,23 +23,22 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
         <IconChevronLeft className="w-4 h-4" />
         Previous
       </button>
-      
-      <div className="flex gap-1">
+
+      <div className="flex gap-2">
         {pages.map((page) => (
           <button
             key={page}
             onClick={() => onPageChange(page)}
-            className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
-              currentPage === page
-                ? 'text-white bg-lime-600 hover:bg-lime-700'
-                : 'text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'
-            }`}
+            className={`px-3 py-2 min-w-10 text-sm font-medium rounded-lg transition-colors ${currentPage === page
+              ? 'text-white bg-lime-600 hover:bg-lime-700'
+              : 'text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'
+              }`}
           >
             {page}
           </button>
         ))}
       </div>
-      
+
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}

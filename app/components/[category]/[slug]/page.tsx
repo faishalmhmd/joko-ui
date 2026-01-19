@@ -87,9 +87,9 @@ export default async function ComponentDetailPage({ params }: PageProps) {
       </div>
 
       {/* Component Variants with Pagination */}
-      <ComponentDetailClient 
-        variants={component.variants} 
-        itemsPerPage={6}
+      <ComponentDetailClient
+        variants={component.variants}
+        itemsPerPage={10}
       />
 
       {/* Navigation */}

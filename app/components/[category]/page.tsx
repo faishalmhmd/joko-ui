@@ -67,10 +67,10 @@ export default async function CategoryPage({ params }: PageProps) {
       </div>
 
       {/* Components with Pagination */}
-      <CategoryClient 
-        components={components} 
+      <CategoryClient
+        components={components}
         category={category}
-        itemsPerPage={9}
+        itemsPerPage={15}
       />
     </div>
   );

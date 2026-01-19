@@ -5,18 +5,24 @@ import { useState, useEffect } from 'react';
 import { useTheme } from './ThemeProvider';
 import Logo from './Logo';
 import SearchDialog from './SearchDialog';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   const renderTheme = mounted ? theme : 'light';
+
+  const isActive = (path: string) => {
+    return pathname?.startsWith(path);
+  };
 
   return (
     <header className="sticky top-0 z-50 glass border-b border-border backdrop-blur-md">
@@ -31,13 +37,21 @@ export default function Header() {
             <nav className="hidden md:flex items-center gap-6">
               <Link
                 href="/components/application"
-                className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                className={`transition-colors font-medium ${
+                  isActive('/components/application')
+                    ? 'text-foreground'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
               >
                 Application
               </Link>
               <Link
                 href="/components/marketing"
-                className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                 className={`transition-colors font-medium ${
+                  isActive('/components/marketing')
+                    ? 'text-foreground'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
               >
                 Marketing
               </Link>
@@ -138,7 +152,10 @@ export default function Header() {
             <nav className="flex flex-col gap-2">
               <Link
                 href="/components/application"
-                className="px-4 py-2 rounded-xl hover:bg-secondary transition-colors font-medium"
+                className={`px-4 py-2 rounded-xl hover:bg-secondary transition-colors font-medium ${
+                  isActive('/components/application')
+                    ? 'bg-secondary' : ''
+                }`}
                 onClick={() => setIsMenuOpen(false)}
                 prefetch={false}
               >
@@ -146,7 +163,10 @@ export default function Header() {
               </Link>
               <Link
                 href="/components/marketing"
-                className="px-4 py-2 rounded-xl hover:bg-secondary transition-colors font-medium"
+                className={`px-4 py-2 rounded-xl hover:bg-secondary transition-colors font-medium ${
+                  isActive('/components/marketing')
+                    ? 'bg-secondary' : ''
+                }`}
                 onClick={() => setIsMenuOpen(false)}
                 prefetch={false}
               >
